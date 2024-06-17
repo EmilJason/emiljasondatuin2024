@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --font-title: "Titillium Web", sans-serif;
+    --primary-color2: #606c38ff;
+    --primary-color1: #283618ff;
+    --background-color: #fefae0ff;
+    --secondary-color2: #dda15eff;
+    --secondary-color1: #bc6c25ff;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1{
+  color: 'blue';
+  font-family: var(--font-title);
+  font-size: 50rem;
+}
+h5{
+  font-family: var(--font-title);
+  font-size: 10rem;
+  color: black;
+  mix-blend-mode: difference;
+  z-index: 5;
+}
+.logo{
+  margin: auto;
+}
+.exp-label-top{
+  font-size: 30rem;
+  opacity: 0.04;
+  font-family: monospace;
+  font-weight: bolder;
+  pointer-events: none;
+  z-index: 0;
+  animation: 50s slide infinite linear;
+}
+.label-slider-top, .label-slider-bottom{
+  position: absolute;
+  display: flex;
+  gap: 3rem;
+}
+.label-slider-top{
+  top: 0;
+  right: 10px;
+}
+.label-slider-bottom{
+  bottom: 0;
+  left: 10px;
+}
+.exp-label{
+  font-size: 30rem;
+  opacity: 0.04;
+  font-family: monospace;
+  font-weight: bolder;
+  pointer-events: none;
+  z-index: 0;
+  animation: 50s slide-reverse infinite linear;
+}
+
+@keyframes slide-reverse{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+
+.work{
+  position: relative;
+  display: flex;
+  margin-inline: 4rem;
+  margin-block: 10rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+  }
+.previous-work{
+  background-color: #0b1f2c;
+  padding-inline: 1rem;
+  padding-block: 4rem;
+  min-width: 350px;
+}
+.previous-work h3, .previous-work span{
+  color: var(--background-color);
+}
+.previous-work h3{
+  font-family: helvetica;
+  font-size: 1.5rem;
+}
+.previous-work span{
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: .9rem;
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+.project-slider, .project-slider2{
+  border: 1px solid black;
+  height: 50dvh;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+.project-slider span, .project-slider2 span{
+  font-size: 5rem;
+  margin-inline: 5rem;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  width: 100vw;
+}
+
+.project-slider{
+  background-color: blue;
+}
+.project-slider2{
+  background-color: red;
+  flex-direction: row-reverse;
+}
+.hero-section{
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+}
+.hero-section canvas{
+  position: absolute;
+  background-color: var(--primary-color1);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.hero-content-wrapper{
+  position: absolute;
+  top: calc((100dvh / 2) - 10rem);
+  left: 5rem;
+  z-index: 1;
+}
+.hero-section h3, .hero-section span, .hero-section h4{
+  color: var(--secondary-color1);
+  font-size: 10rem;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+}
+.hero-section span{
+  font-size: 2rem;
+  text-transform: none;
+  color: var(--background-color);
+}
+.hero-section h4{
+  font-size: 2rem;
+  color: var(--background-color);
+}
+
+#imgCanvas{
+    background-color: var(--primary-color1);
+    display: block;
+    width: 100vw;
+    height: 100dvh;
+}
+.hero{
+    position: absolute;
+    top: 20%;
+    left: 5%;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero .hero-title{
+    font-family: var(--font-title);
+    font-size: 15em;
+    color: var(--secondary-color2);
+    pointer-events: none;
+}
+.hero h5{
+    font-family: var(--font-title);
+    font-size: 3em;
+    color: var(--primary-color2);
+}
