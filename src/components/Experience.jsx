@@ -4,6 +4,8 @@ import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useRef } from "react"
 
+import { experiences } from "../data/experiences"
+
 
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
@@ -54,7 +56,7 @@ const Experience = () => {
     <>
     <div id="experience" ref={experienceContainer} style={{
         position: 'relative',
-        height: '100dvh',
+        minHeight: '100dvh',
         backgroundColor: 'var(--bg-color-1)',
         overflowX: 'hidden',
     }}>
@@ -68,22 +70,20 @@ const Experience = () => {
         </div>
         {/* content */}
         <div className="work">
-          <div className="previous-work">
-            <h3>GCM3 inc.,</h3>
-            <span>Software Developer</span>
-          </div>
-          <div className="previous-work">
-            <h3>Nityo Infotech / IBM</h3>
-            <span>IT Helpdesk</span>
-          </div>
-          <div className="previous-work">
-            <h3>Calasiao Educational Center</h3>
-            <span>IT support / Computer Teacher</span>
-          </div>
-          <div className="previous-work">
-            <h3>DABZ Printshoppe</h3>
-            <span>Graphic Artist</span>
-          </div>
+        {experiences.map((item, index) => (
+            <div className="previous-work" key={index}>
+              <div className="company-date">
+                <h3>{item.company}</h3>
+                <span>{item.dateHired.month} {item.dateHired.year} - {item.dateLeave.month} {item.dateLeave.year}</span>
+              </div>
+              <div className="company-description">
+                <p>{item.description}</p>
+                <div className="tech-list">
+                {item.technology.map(tech=>(<span className="tech" key={tech}>{tech}</span>))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
         </div>
     </>

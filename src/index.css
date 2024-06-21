@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
     --font-title: "Titillium Web", sans-serif;
     --primary-color2: #606c38ff;
@@ -6,7 +7,9 @@
     --background-color: #fefae0ff;
     --secondary-color2: #dda15eff;
     --secondary-color1: #bc6c25ff;
-}
+    --background-gradient-primary: linear-gradient(to right top, #83a859, #71914c, #5f7b3f, #4e6533, #3d5027, #364722, #2f3e1d, #283618, #283618, #283618, #283618, #283618);
+
+  }
 *{
   margin: 0;
   padding: 0;
@@ -76,6 +79,9 @@ h5{
   }
 }
 
+#experience{
+  max-width: 55%;
+}
 .work{
   position: relative;
   display: flex;
@@ -85,13 +91,56 @@ h5{
   flex-wrap: wrap;
   }
 .previous-work{
-  background-color: #0b1f2c;
+  /* background-color: var(--primary-color1); */
   padding-inline: 1rem;
   padding-block: 4rem;
-  min-width: 350px;
+  min-width: 100%;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  transition: all .5s;
 }
-.previous-work h3, .previous-work span{
+.previous-work .company-date{
+  width: 50rem;
+  text-align: end;
+}
+.previous-work .company-description{
+  flex-grow: 2;
+}
+.company-description{
+  position: relative;
+}
+.company-description::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-10px);
+  width: 3px;
+  height: 100%;
+  background-color: var(--secondary-color1);
+}
+.company-description::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-23px) translateY(80px);
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--primary-color2);
+}
+.previous-work:hover{
+  background-color: var(--primary-color2);
+}
+.previous-work h3, .previous-work span, .previous-work p{
   color: var(--background-color);
+  /* color: var(--primary-color1); */
+}
+.previous-work:hover h3, .previous-work:hover span, .previous-work:hover p{
+  color: var(--primary-color1);
 }
 .previous-work h3{
   font-family: helvetica;
@@ -101,6 +150,22 @@ h5{
   font-style: italic;
   font-family: sans-serif;
   font-size: .9rem;
+}
+
+.tech-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  align-items: start;
+}
+.tech-list .tech{
+  font-style: normal;
+  /* font-weight: bold; */
+  padding: .4rem;
+  border-radius: 4rem;
+  border: 2px solid darkcyan;
+  min-width: 8ch;
+  text-align: center;
 }
 
 .projects{
@@ -136,11 +201,10 @@ h5{
 .hero-section{
   position: relative;
   height: 100dvh;
-  overflow: hidden;
 }
-.hero-section canvas{
-  position: absolute;
-  background-color: var(--primary-color1);
+ canvas{
+  position: fixed;
+  background-image: var(--background-gradient-primary);
   top: 0;
   left: 0;
   z-index: 0;
@@ -161,6 +225,7 @@ h5{
   font-size: 2rem;
   text-transform: none;
   color: var(--background-color);
+  position: absolute;
 }
 .hero-section h4{
   font-size: 2rem;
@@ -168,7 +233,8 @@ h5{
 }
 
 #imgCanvas{
-    background-color: var(--primary-color1);
+    /* background-color: var(--primary-color1); */
+    /* background-image: var(--background-gradient-primary); */
     display: block;
     width: 100vw;
     height: 100dvh;
@@ -191,4 +257,159 @@ h5{
     font-family: var(--font-title);
     font-size: 3em;
     color: var(--primary-color2);
+}
+.positions{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+  overflow-y: hidden;
+}
+.position-wrapper{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  animation: position-slide 10s infinite alternate;
+  /* animation-delay: 2s; */
+}
+@keyframes position-slide{
+  0%{
+    transform: translateY(0%);
+  }
+  20%{
+    transform: translateY(-20%);
+  }
+  40%{
+    transform: translateY(-40%);
+  }
+  60%{
+    transform: translateY(-60%);
+  }
+  80%{
+    transform: translateY(-80%);
+  }
+  100%{
+    transform: translateY(-60%);
+  }
+}
+.social-icons{
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.social-icons a{
+  font-size: 2rem;
+  display: block;
+  margin-right: 1.5rem;
+  color: var(--primary-color1);
+  transition: all .5s ease-in-out
+}
+.social-icons a:hover{
+  transform: scale(1.3);
+  color: var(--secondary-color2);
+}
+/* TechStack */
+.tech-stack{
+  z-index: 4;
+  position: relative;
+  max-width: 55%;
+  overflow: hidden;
+  display: flex;
+  gap: 5rem;
+}
+.tech-stack::after{
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 6;
+  background: linear-gradient(90deg, rgba(132,162,98,0) 0%, rgba(108,143,68,0.3393732492997199) 50%, rgba(40,54,24,0.5242471988795518) 92%);
+}
+.tech-stack::before{
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  background: linear-gradient(270deg, rgba(132,162,98,0) 0%, rgba(108,143,68,0.3393732492997199) 50%, rgba(152,179,123,0.5242471988795518) 92%);
+}
+.tech-slider{
+  display: flex;
+  gap: 5rem;
+  animation: 10s slideicon infinite linear;
+}
+.tech-stack i{
+  font-size: 8rem;
+  color: var(--icon-color);
+}
+@keyframes slideicon{
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+/* Contact */
+
+.contact{
+  position: relative;
+  width: 55%;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  /* background-color: #f9f9f9; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #218838;
 }
