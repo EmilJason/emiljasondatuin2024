@@ -11,7 +11,7 @@ export const experiences = [
             year: "2024"
         },
         description:" I developed the company system requirements and collaborated closely with the team. I maintained clients' systems using a ticketing tool, resolving bugs efficiently. My role involved planning new client requirements, sharing ideas, and utilizing various web technologies and programming languages. I quickly adapted to new programming languages swiftly and created mockups and prototypes using tools like Figma. I communicated with clients base in the UK, US, and the Philippines for development updates. I ensured quality by testing requirements at every stage of development and participated in daily standup meetings to provide updates and feedback.",
-        technology: ['HTML','CSS','Javascript','Vue','Node','PHP', 'Kohana/Koseven','Glia IVR function', 'Rest API', 'Express', 'Jquery']
+        technology: ['HTML','CSS','Javascript','Vue','Node','PHP', 'Kohana/Koseven','Glia IVR function', 'Rest API', 'Express', 'Jquery', 'Linux']
     },
     {
         company: "Nityo Infotech / IBM",

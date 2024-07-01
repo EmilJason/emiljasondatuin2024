@@ -26,7 +26,7 @@ const Hero = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      imgX = canvas.width - (imgWidth - 100);
+      imgX = canvas.width - (imgWidth - 300);
       imgY = (canvas.height - (imgHeight - 400)) / 2; // Center the image vertically
       createParticles(); // Recreate particles on resize
     };
@@ -140,7 +140,7 @@ const Hero = () => {
   return (
     <>
       <canvas ref={canvasRef}></canvas>
-    <div className="hero-section">
+    <div id="home" className="hero-section">
         <div className="hero-content-wrapper">
           <span>Hello, I am</span>
           <h3>Emil</h3>
