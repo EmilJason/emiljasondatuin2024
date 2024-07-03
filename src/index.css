@@ -30,7 +30,7 @@
 }
 html{
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 h1 {
   color: "blue";
@@ -150,6 +150,7 @@ h5 {
   margin-block: 5rem;
   gap: 2rem;
   flex-wrap: wrap;
+  flex-shrink: 1;
   width: 60%;
 }
 .previous-work {
@@ -584,7 +585,7 @@ canvas {
     margin-inline: 1rem;
     margin-block: 5rem;
     gap: 1rem;
-    width: 100%;
+    width: 90%;
   }
 .company-date{
   justify-content: end;
