@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useState,useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { experiences } from "../data/experiences";
 
@@ -23,7 +23,6 @@ const Experience = () => {
         ref={experienceContainer}
         style={{
           position: "relative",
-          backgroundColor: "var(--bg-color-1)",
           minHeight: "100dvh"
         }}
         onMouseMove={(e) => {
