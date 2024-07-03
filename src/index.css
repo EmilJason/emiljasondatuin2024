@@ -450,7 +450,7 @@ canvas {
   padding-block: 4rem;
   transform-origin: bottom;
   animation: fadeZoom linear both;
-  animation-timeline: view(99% 0%);
+  animation-timeline: view(90% 0%);
 }
 @keyframes fadeZoom {
   from{
