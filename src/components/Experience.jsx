@@ -33,7 +33,7 @@ const Experience = () => {
         <div
         className="gradient-overlay"
         style={{
-          background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 107, 107, 0.5), rgba(255, 107, 107, 0) 30%)`
+          background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 245, 107, 0.2), rgba(166, 255, 107, 0) 30%)`
         }}
       ></div>
        
