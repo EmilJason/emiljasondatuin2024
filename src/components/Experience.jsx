@@ -1,20 +1,23 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import {  useRef, useState } from "react";
 
 import { experiences } from "../data/experiences";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-let mouse = {
-  x: undefined,
-  y: undefined,
-};
 
 const Experience = () => {
   const experienceContainer = useRef();
   const card = useRef()
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    setMousePos({ x: e.clientX, y: e.clientY });
+  };
+
+
 
   return (
     <>
@@ -25,13 +28,14 @@ const Experience = () => {
           position: "relative",
           minHeight: "100dvh"
         }}
-        onMouseMove={(e) => {
-          mouse.x = e.clientX;
-          mouse.y = e.clientY;
-
-          // console.log('circ', circ.current)
-        }}
+        onMouseMove={handleMouseMove}
       >
+        <div
+        className="gradient-overlay"
+        style={{
+          background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 107, 107, 0.5), rgba(255, 107, 107, 0) 30%)`
+        }}
+      ></div>
        
         {/* content */}
         <div className="work">

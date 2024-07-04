@@ -30,7 +30,7 @@
 }
 html{
   scroll-behavior: smooth;
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 }
 h1 {
   color: "blue";
@@ -140,8 +140,19 @@ h5 {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   background-color: var(--primary-color1);
+}
+.gradient-overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 245, 107, 0.5), rgba(166, 255, 107, 0) 30%);
+  transition: background 0.2s ease;
+  pointer-events: none;
 }
 .work {
   position: relative;
@@ -415,7 +426,7 @@ canvas {
 .tech-stack {
   z-index: 4;
   position: relative;
-  max-width: 60%;
+  max-width: 100%;
   overflow: hidden;
   display: flex;
   gap: 1rem;
@@ -429,6 +440,9 @@ canvas {
 .tech-slider i {
   font-size: 10rem;
   color: var(--icon-color);
+}
+.tech-stack:hover .tech-slider{
+  animation-play-state: paused;
 }
 @keyframes slideicon {
   from {
@@ -444,14 +458,13 @@ canvas {
   flex-wrap: wrap;
   flex-basis: content;
   width: 100%;
-  margin-top: 10rem;
   margin-bottom: 10rem;
   background-color: var(--background-color);
   padding-inline: 1rem;
   padding-block: 4rem;
   transform-origin: bottom;
   animation: fadeZoom linear both;
-  animation-timeline: view(90% 0%);
+  animation-timeline: view(90%, 25%);
 }
 @keyframes fadeZoom {
   from{
@@ -576,9 +589,9 @@ canvas {
   .company-description::after {
     display: none;
   }
-  .tech-slider i{
+  /* .tech-slider i{
     font-size: 5rem;
-  }
+  } */
 }
 @media (max-width: 768px) {
   .work {
@@ -597,9 +610,6 @@ canvas {
     gap: 0.5rem;
   }
   
-  .tech-slider i {
-    font-size: 5rem;
-  }
   #experience {
     max-width: 100%;
   }
