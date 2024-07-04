@@ -377,6 +377,38 @@ canvas {
   font-size: 1.5rem;
   color: var(--primary-color2);
 }
+.btn-download{
+  position:absolute;
+  padding-inline: .9rem;
+  padding-block: .7rem;
+  font-family: var(--font-para);
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--secondary-color2);
+  color: var(--background-color);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+
+}
+.scroll-down-wrapper{
+  position: absolute;
+  bottom: 50px;
+  left: calc(100vw / 2);
+  animation: scrollAnimation 1s infinite alternate forwards;
+}
+.scroll-down-wrapper span i{
+  color: var(--secondary-color2);
+  font-size: 2rem;
+}
+@keyframes scrollAnimation {
+  from{
+    transform: translateY(10px)
+  }
+  to{
+    transform: translateY(0px)
+  }
+}
 .positions {
   position: relative;
   display: flex;
@@ -458,6 +490,7 @@ canvas {
 .contact {
   position: relative;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-basis: content;
   width: 100%;

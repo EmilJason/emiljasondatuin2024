@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { imgSource } from "../data/heroImg.js";
+import resume from "../assets/RESUME_EMIL.pdf";
 
 
 let mouse = {
@@ -157,6 +158,12 @@ const Hero = () => {
           <a href="https://www.linkedin.com/in/emil-jason-datuin-3b169b176"><i className="fa-brands fa-linkedin"></i></a>
           <a href="https://github.com/EmilJason"><i className="fa-brands fa-github-alt"></i></a>
           </div>
+          {/* <div className="actions-wrapper">
+            <a href="" download={resume} className="btn-download">Download CV</a>
+          </div> */}
+        </div>
+        <div className="scroll-down-wrapper">
+          <span><i className="fa-solid fa-caret-down"></i></span>
         </div>
     </div>
         
