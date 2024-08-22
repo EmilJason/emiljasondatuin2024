@@ -81,7 +81,12 @@ const Hero = () => {
     const createParticles = (centerX, centerY) => {
       particles = [];
       drawImage(centerX, centerY);
-      let pixelData = ctx.getImageData(centerX, centerY, imgWidth, imgHeight).data;
+      let pixelData = ctx.getImageData(
+        centerX,
+        centerY,
+        imgWidth,
+        imgHeight
+      ).data;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let y = 0; y < imgHeight; y += 10) {
@@ -140,7 +145,7 @@ const Hero = () => {
       <div id="home" className="hero-section">
         <div className="hero-content-wrapper">
           <span>Hello, I am</span>
-          <h3>Emil 👋</h3>
+          <h3>Emil Jason Datuin 👋</h3>
           <div className="positions">
             <div className="position-wrapper">
               <h4>Software Developer</h4>
@@ -150,6 +155,8 @@ const Hero = () => {
               <h4>IT Helpdesk</h4>
             </div>
           </div>
+          <p>Let us make this world a better place.</p>
+          <a id="hireBtn" href="#contact"><span>Hire me 👍</span></a>
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/emil-jason-datuin-3b169b176">
               <i className="fa-brands fa-linkedin"></i>
@@ -160,7 +167,9 @@ const Hero = () => {
           </div>
         </div>
         <div className="scroll-down-wrapper">
-          <span><i className="fa-solid fa-caret-down"></i></span>
+          <span>
+            <i className="fa-solid fa-caret-down"></i>
+          </span>
         </div>
       </div>
     </>
