@@ -1,78 +1,87 @@
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useRef } from "react"
-
-gsap.registerPlugin(useGSAP, ScrollTrigger)
+import lhandcreative from "../assets/images/lhandcreatives.gif";
+import protoapp from "../assets/images/protoapp.gif";
+import cusinaedelmina from "../assets/images/cusinaedelmina.gif";
+import surveyvue from "../assets/images/surveyvue.gif";
 
 const Projects = () => {
-   const works = useRef()
-  useGSAP(()=>{
-    // const workTl = gsap.timeline({scrollTrigger:{
-    //   trigger: works.current,
-    //   pin: true,
-    //   scrub: true,
-    //   start : 'center center'
-    // }})
-    // workTl.to('.project-slider span',{
-    //   x: '+=900',
-    //   opacity: 1
-    // })
-
-    gsap.fromTo('.project-slider span',{
-      opacity: 0.3
-    },
-    {
-      opacity: 1,
-      x: '-=900',
-      scrollTrigger:{
-        trigger: works.current,
-        pin: true,
-        scrub: true,
-        start: 'center center'
-      }
-    })
-    //
-    gsap.fromTo('.project-slider2 span',{
-      opacity: 0.3
-    },
-    {
-      opacity: 1,
-      x: '+=900',
-      scrollTrigger:{
-        trigger: works.current,
-        pin: true,
-        scrub: true,
-        start: 'center center'
-      }
-    })
-  }, {scope: works.current})
   return (
-    <>
-    <div ref={works} className="projects">
-        <div className="project-slider">
-            <span>slide 1</span>
-            <span>slide 1</span>
-            <span>slide 1</span>
-            <span>slide 1</span>
-            <span>slide 1</span>
-            <span>slide 1</span>
-            <span>slide 1</span>
-            <span>slide 1</span>
+    <div className="projects">
+      <h2>Projects</h2>
+      <div className="projects-container">
+        <div className="project">
+          <img
+            src={lhandcreative}
+            alt="Lhandcreative"
+            width={500}
+            
+          />
+          <div className="project-details">
+          <h3>Lhandcreative</h3>
+          <p>A website for a design agency.</p>
+          <div className="actions">
+            <a href="https://lhandcreatives.vercel.app/" target="_blank" rel="noopener noreferrer">
+            View
+            </a>
+            <a href="https://github.com/EmilJason/lhandcreatives" target="_blank" rel="noopener noreferrer">
+            Github
+            </a>
+          </div>
+          </div>
+          
         </div>
-        <div className="project-slider2">
-        <span>slide 1</span>
-            <span>slide 2</span>
-            <span>slide 2</span>
-            <span>slide 2</span>
-            <span>slide 2</span>
-            <span>slide 2</span>
-            <span>slide 2</span>
-            <span>slide 2</span>
+        <div className="project">
+          <img src={protoapp} alt="Protoapp" width={500}  />
+          <div className="project-details">
+          <h3>Protoapp</h3>
+          <p>A website for a design agency.</p>
+          <div className="actions">
+            <a href="https://protoapp-exam.vercel.app/" target="_blank" rel="noopener noreferrer">
+            View
+            </a>
+            <a href="https://github.com/EmilJason/protoapp-exam" target="_blank" rel="noopener noreferrer">
+            Github
+            </a>
+          </div>
+          </div>
         </div>
+        <div className="project">
+          <img
+            src={cusinaedelmina}
+            alt="Cusinaedelmina"
+            width={500}
+            
+          />
+          <div className="project-details">
+          <h3>Cusinaedelmina</h3>
+          <p>A simple website for an ordering system of a restaurant.</p>
+          <div className="actions">
+            <a href="https://foodapi-eight.vercel.app/" target="_blank" rel="noopener noreferrer">
+            View
+            </a>
+            <a href="https://github.com/EmilJason/foodorderingv2" target="_blank" rel="noopener noreferrer">
+            Github
+            </a>
+          </div>
+          </div>
+        </div>
+        <div className="project">
+          <img src={surveyvue} alt="Survey" width={500}  />
+          <div className="project-details">
+          <h3>Survey</h3>
+          <p>An output of my exam for a software development company.</p>
+          <div className="actions">
+            <a href="https://vue-survey.netlify.app/" target="_blank" rel="noopener noreferrer">
+            View
+            </a>
+            <a href="https://github.com/EmilJason/vue-surveyapp" target="_blank" rel="noopener noreferrer">
+            Github
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

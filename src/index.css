@@ -286,37 +286,7 @@ h5 {
   min-width: 8ch;
   text-align: center;
 }
-.projects {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-.project-slider,
-.project-slider2 {
-  border: 1px solid black;
-  height: 50vh;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: nowrap;
-}
-.project-slider span,
-.project-slider2 span {
-  font-size: 1.5rem;
-  margin-inline: 1rem;
-  text-wrap: nowrap;
-  text-transform: uppercase;
-  font-weight: bold;
-  display: block;
-  width: 100vw;
-}
-.project-slider {
-  background-color: blue;
-}
-.project-slider2 {
-  background-color: red;
-  flex-direction: row-reverse;
-}
+
 .hero-section {
   position: relative;
   height: 100vh;
@@ -330,9 +300,14 @@ canvas {
 }
 .hero-content-wrapper {
   position: absolute;
-  top: calc((100vh / 2) - 10rem);
-  left: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  border-radius: 8px;
 }
 .hero-section h3,
 .hero-section span,
@@ -352,6 +327,9 @@ canvas {
 .hero-section h4 {
   font-size: 1.5rem;
   color: var(--background-color);
+}
+.hero-section h3{
+  font-size: 5rem; 
 }
 #imgCanvas {
   display: block;
@@ -451,7 +429,7 @@ canvas {
   font-size: 2rem;
   display: block;
   margin-right: 1.5rem;
-  color: var(--primary-color1);
+  color: var(--secondary-color1);
   transition: all 0.5s ease-in-out;
 }
 .social-icons a:hover {
@@ -657,10 +635,7 @@ canvas {
   .company-date{
     justify-content: end;
   }
-  .hero-content-wrapper {
-    top: calc((100vh / 2) - 5rem);
-    left: 2rem;
-  }
+ 
   .hero .hero-title {
     font-size: 2.5rem;
   }
@@ -713,4 +688,55 @@ canvas {
   .tech-stack {
     max-width: 100%;
   }
+}
+.projects{
+  position: relative;
+  background: var(--primary-color1);
+  color: #fff;
+  font-family: var(--font-title);
+  padding-block: 100px;
+}
+.projects > h2{
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.projects > .projects-container{
+  margin: auto;
+  max-width: max-content;
+}
+.project-details{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project{
+  display: flex;
+  gap: 10px;
+  margin-block: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+}
+.project > img{
+  border-radius: 8px;
+}
+.project > .actions{
+  display: flex;
+  height: auto;
+}
+.actions > a{
+  width: 500px;
+  height: 40px;
+  padding: .5rem;
+  border-radius: 8px;
+  background: var(--secondary-color1);
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-block: 1rem;
+  transition: transform 0.3s;
 }

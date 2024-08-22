@@ -3,6 +3,7 @@ import Contact from './components/Contact';
 import Experience from './components/Experience';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
+import Projects from './components/Projects';
 
 const App = () => {
   const [activeLink,setActiveLink] = useState('home');
@@ -58,6 +59,7 @@ const App = () => {
       <Hero />
       <Experience />
       <TechStack />
+      <Projects />
       <Contact />
     </div>
   )

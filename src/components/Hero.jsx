@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { imgSource } from "../data/heroImg.js";
 import resume from "../assets/RESUME_EMIL.pdf";
 
-
 let mouse = {
   x: undefined,
   y: undefined,
@@ -20,20 +19,18 @@ const Hero = () => {
 
     const imgWidth = 1300; // Fixed width of the image
     const imgHeight = 1300; // Fixed height of the image
-    let imgX = 0;
-    let imgY = 0;
     let particles = [];
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      imgX = canvas.width - (imgWidth - 300);
-      imgY = (canvas.height - (imgHeight - 400)) / 2; // Center the image vertically
-      createParticles(); // Recreate particles on resize
+      const centerX = (canvas.width - imgWidth) / 2;
+      const centerY = (canvas.height - imgHeight + 400) / 2;
+      createParticles(centerX, centerY); // Recreate particles on resize
     };
 
-    const drawImage = () => {
-      ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+    const drawImage = (x, y) => {
+      ctx.drawImage(img, x, y, imgWidth, imgHeight);
     };
 
     class Particle {
@@ -81,10 +78,10 @@ const Hero = () => {
       }
     }
 
-    const createParticles = () => {
+    const createParticles = (centerX, centerY) => {
       particles = [];
-      drawImage();
-      let pixelData = ctx.getImageData(imgX, imgY, imgWidth, imgHeight).data;
+      drawImage(centerX, centerY);
+      let pixelData = ctx.getImageData(centerX, centerY, imgWidth, imgHeight).data;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let y = 0; y < imgHeight; y += 10) {
@@ -97,7 +94,7 @@ const Hero = () => {
           let color = `rgb(${red},${green},${blue})`;
 
           if (alpha > 0) {
-            particles.push(new Particle(imgX + x, imgY + y, color));
+            particles.push(new Particle(centerX + x, centerY + y, color));
           }
         }
       }
@@ -127,7 +124,6 @@ const Hero = () => {
 
     img.onload = () => {
       resizeCanvas();
-      createParticles();
       animate();
     };
 
@@ -141,13 +137,13 @@ const Hero = () => {
   return (
     <>
       <canvas ref={canvasRef}></canvas>
-    <div id="home" className="hero-section">
+      <div id="home" className="hero-section">
         <div className="hero-content-wrapper">
           <span>Hello, I am</span>
-          <h3>Emil</h3>
+          <h3>Emil 👋</h3>
           <div className="positions">
             <div className="position-wrapper">
-              <h4 >Software Developer</h4>
+              <h4>Software Developer</h4>
               <h4>Web Developer</h4>
               <h4>Frontend Developer</h4>
               <h4>Backend Developer</h4>
@@ -155,18 +151,18 @@ const Hero = () => {
             </div>
           </div>
           <div className="social-icons">
-          <a href="https://www.linkedin.com/in/emil-jason-datuin-3b169b176"><i className="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/EmilJason"><i className="fa-brands fa-github-alt"></i></a>
+            <a href="https://www.linkedin.com/in/emil-jason-datuin-3b169b176">
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/EmilJason">
+              <i className="fa-brands fa-github-alt"></i>
+            </a>
           </div>
-          {/* <div className="actions-wrapper">
-            <a href="" download={resume} className="btn-download">Download CV</a>
-          </div> */}
         </div>
         <div className="scroll-down-wrapper">
           <span><i className="fa-solid fa-caret-down"></i></span>
         </div>
-    </div>
-        
+      </div>
     </>
   );
 };
