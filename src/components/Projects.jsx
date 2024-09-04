@@ -12,8 +12,7 @@ const Projects = () => {
           <img
             src={lhandcreative}
             alt="Lhandcreative"
-            width={500}
-            
+                        
           />
           <div className="project-details">
           <h3>Lhandcreative</h3>
@@ -30,7 +29,7 @@ const Projects = () => {
           
         </div>
         <div className="project">
-          <img src={protoapp} alt="Protoapp" width={500}  />
+          <img src={protoapp} alt="Protoapp"  />
           <div className="project-details">
           <h3>Protoapp</h3>
           <p>A website for a design agency.</p>
@@ -48,8 +47,7 @@ const Projects = () => {
           <img
             src={cusinaedelmina}
             alt="Cusinaedelmina"
-            width={500}
-            
+                        
           />
           <div className="project-details">
           <h3>Cusinaedelmina</h3>
@@ -65,7 +63,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="project">
-          <img src={surveyvue} alt="Survey" width={500}  />
+          <img src={surveyvue} alt="Survey"  />
           <div className="project-details">
           <h3>Survey</h3>
           <p>An output of my exam for a software development company.</p>
