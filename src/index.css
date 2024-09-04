@@ -739,6 +739,9 @@ canvas {
   font-family: var(--font-title);
   padding-block: 100px;
 }
+.projects img{
+  aspect-ratio: 16/9;
+}
 .projects > h2{
   text-align: center;
   font-size: 3rem;
