@@ -144,32 +144,47 @@ const Hero = () => {
       <canvas ref={canvasRef}></canvas>
       <div id="home" className="hero-section">
         <div className="hero-content-wrapper">
-          <span>Hello, I am</span>
-          <h3>Emil Jason Datuin 👋</h3>
-          <div className="positions">
-            <div className="position-wrapper">
-              <h4>Software Developer</h4>
-              <h4>Web Developer</h4>
-              <h4>Frontend Developer</h4>
-              <h4>Backend Developer</h4>
-              <h4>IT Helpdesk</h4>
+          <div class="tools">
+            <div class="circle">
+              <span class="red box"></span>
+            </div>
+            <div class="circle">
+              <span class="yellow box"></span>
+            </div>
+            <div class="circle">
+              <span class="green box"></span>
             </div>
           </div>
-          <p>Let us make this world a better place.</p>
-          <a id="hireBtn" href="#contact"><span>Hire me 👍</span></a>
-          <div className="social-icons">
-            <a href="https://www.linkedin.com/in/emil-jason-datuin-3b169b176">
-              <i className="fa-brands fa-linkedin"></i>
+          <div className="card__content">
+            <span>Hello, I am</span>
+            <h3>Emil Jason Datuin 👋</h3>
+            <div className="positions">
+              <div className="position-wrapper">
+                <h4>Software Developer</h4>
+                <h4>Web Developer</h4>
+                <h4>Frontend Developer</h4>
+                <h4>Backend Developer</h4>
+                <h4>IT Helpdesk</h4>
+              </div>
+            </div>
+            <p>Let us make this world a better place.</p>
+            <a id="hireBtn" href="#contact">
+              <span>Hire me 👍</span>
             </a>
-            <a href="https://github.com/EmilJason">
-              <i className="fa-brands fa-github-alt"></i>
-            </a>
+            <div className="social-icons">
+              <a href="https://www.linkedin.com/in/emil-jason-datuin-3b169b176">
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/EmilJason">
+                <i className="fa-brands fa-github-alt"></i>
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="scroll-down-wrapper">
-          <span>
-            <i className="fa-solid fa-caret-down"></i>
-          </span>
+          <div className="scroll-down-wrapper">
+            <span>
+              <i className="fa-solid fa-caret-down"></i>
+            </span>
+          </div>
         </div>
       </div>
     </>

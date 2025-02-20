@@ -304,11 +304,64 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  /* width: 190px; */
+  /* height: 254px; */
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #011522;
+  border-radius: 8px;
+  z-index: 1;
+}
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+.card__content{
+    padding: .5rem;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    width: auto;
+    margin: 1rem;
+}
+
+/* .hero-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
   margin: auto;
   background: rgba(0, 0, 0, 0.5);
   padding: 3rem;
   border-radius: 8px;
-}
+} */
 .hero-section h3,
 .hero-section span,
 .hero-section h4 {
