@@ -144,15 +144,15 @@ const Hero = () => {
       <canvas ref={canvasRef}></canvas>
       <div id="home" className="hero-section">
         <div className="hero-content-wrapper">
-          <div class="tools">
-            <div class="circle">
-              <span class="red box"></span>
+          <div className="tools">
+            <div className="circle">
+              <span className="red box"></span>
             </div>
-            <div class="circle">
-              <span class="yellow box"></span>
+            <div className="circle">
+              <span className="yellow box"></span>
             </div>
-            <div class="circle">
-              <span class="green box"></span>
+            <div className="circle">
+              <span className="green box"></span>
             </div>
           </div>
           <div className="card__content">
@@ -180,11 +180,11 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          <div className="scroll-down-wrapper">
-            <span>
-              <i className="fa-solid fa-caret-down"></i>
-            </span>
-          </div>
+        </div>
+        <div className="scroll-down-wrapper">
+          <span>
+            <i className="fa-solid fa-caret-down"></i>
+          </span>
         </div>
       </div>
     </>
